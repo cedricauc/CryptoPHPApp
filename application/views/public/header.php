@@ -1,10 +1,10 @@
 <header>
     <nav class="navbar navbar-dark navbar-expand-md bg-secondary py-3">
         <div class="container">
-            <a href="#">
-                <img src="assets/img/logo.png" style="width: 50px; height: 50px;" />
+            <a href="/">
+                <img src="/assets/img/logo.png" style="width: 50px; height: 50px;" />
             </a>
-            <a class="navbar-brand d-flex align-items-center ms-5" href="#">
+            <a class="navbar-brand d-flex align-items-center ms-5" href="/">
                 <span class="text-info">cryptoevol</span>
             </a>
             <button
@@ -24,7 +24,7 @@
                         <a class="nav-link link-dark" href="#">Téléchargements</a>
                     </li>
                     <li class="nav-item border-start border-1 border-dark ps-3">
-                        <a class="nav-link link-dark" href="#">Créer un compte</a>
+                        <a class="nav-link link-dark" href="/register">Créer un compte</a>
                     </li>
                 </ul>
             </div>

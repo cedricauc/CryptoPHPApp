@@ -1,3 +1,5 @@
+<link href="<?php echo '/assets/bootstrap/css/admin.min.css';?>" rel="stylesheet">
+
 <body id="page-top">
 <div id="wrapper">
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">

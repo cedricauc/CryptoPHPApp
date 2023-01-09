@@ -2,6 +2,10 @@
 
 namespace Core;
 
+use Core\Auth\Auth;
+use PDO;
+use PDOException;
+
 class DB{
 
     private static $instance;

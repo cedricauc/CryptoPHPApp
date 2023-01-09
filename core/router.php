@@ -9,18 +9,17 @@ class Router{
      public static function run(){
          $url = $_SERVER['REQUEST_URI'];
 
-         //var_dump(isset($url[0]));
-        if(!isset($url[1])){
+        if($url == "/"){
             require BASE_APP.'controller/home.php';
             $controller = new Home();
             $controller->index();
             exit;
         }
 
-        $url = explode('/',$url);
-        //var_dump($url);
+        $params = explode('/',$url);
+        array_shift($params);
 
-        $controllerName = ucfirst(array_pop($url));
+        $controllerName = ucfirst(array_shift($params));
 
         $file = BASE_APP.'controller/'.lcfirst($controllerName).'.php';
         if(file_exists($file)){
@@ -34,14 +33,15 @@ class Router{
             exit;
         }
 
-        if(!empty($url[1])){
-            $methodName = array_shift($url[1]);
+        if(!empty($params)){
+            $methodName = array_shift($params);
             $method = method_exists($controller, $methodName) ? $methodName : "index";
         }else{
             $method = "index";
         }
 
-        $params = !empty($url[1]) ? array_values($url[1]) : [];
-        call_user_func_array([$controller, $method], $params);
+        $actions = !empty($params) ? array_values($params) : [];
+        call_user_func_array([$controller, $method], $actions);
     }
+
 }

@@ -17,7 +17,7 @@ class Admin extends Controller{
             'title' =>"ADMIN"
         ] ;
 
-        $this->view('public/admin','dashboard','admin',$this->data);
+        $this->view('public/admin','dashboard',$this->data);
     }
 
 }

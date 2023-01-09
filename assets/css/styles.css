@@ -3,17 +3,21 @@
     padding-bottom: 6rem !important;
 }
 
+.pt-10 {
+    padding-top: 6rem !important;
+}
+
+.pb-10 {
+    padding-bottom: 6rem !important;
+}
+
 .svg-border-rounded svg {
     height: 3rem;
 }
 
 .svg-border-rounded svg {
-    /*position: absolute;*/
-    /*bottom: 0;*/
-    /*left: 0;*/
     height: 2rem;
     width: 100%;
-    /*margin-top: 15px;*/
 }
 
 .text-gray-dark{

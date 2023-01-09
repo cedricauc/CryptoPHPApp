@@ -14,10 +14,11 @@ class Home extends Controller{
     public function index(){
 
         $this->data = [
-            'title' =>"ACCUEIL"
+            'title' =>"ACCUEIL",
+            'message' =>null
         ] ;
 
-        $this->view('public','home','bootstrap',$this->data);
+        $this->view('public','home',$this->data);
     }
 
 }

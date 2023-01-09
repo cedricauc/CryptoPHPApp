@@ -1,3 +1,5 @@
+<link href="<?php echo '/assets/bootstrap/css/bootstrap.min.css';?>" rel="stylesheet">
+
 <?php require $header ?></body>
 
 <section class="bg-secondary">
@@ -17,7 +19,7 @@
                     <a
                             class="btn btn-primary btn-lg link-light border rounded-pill me-2"
                             role="button"
-                            href="#"
+                            href="/register"
                     >
                         Créer un compte
                     </a>
@@ -39,7 +41,7 @@
                         <div
                                 class="card-body bg-secondary d-flex flex-column align-items-center"
                         >
-                            <form class="text-center" method="post">
+                            <form class="text-center" method="post" action="/login">
                                 <div class="form-group mb-3">
                                     <label class="form-label float-start">
                                         E-mail
@@ -59,6 +61,11 @@
                                             name="password"
                                             placeholder="Password"
                                     />
+                                </div>
+                                <div class="row mb-3">
+                                    <?php if($message) : ?>
+                                        <p class="text-danger"><?= $message ?></p>
+                                    <?php endif ?>
                                 </div>
                                 <div class="mb-3">
                                     <button
@@ -250,7 +257,6 @@
         </div>
     </div>
     <div class="svg-border-rounded text-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg></div><!----><!----><!---->
-
 </section>
 
 <?php require $footer ?></body>
