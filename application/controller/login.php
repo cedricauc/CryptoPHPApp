@@ -35,6 +35,8 @@ class Login extends Controller{
             $user = $md->findByEmail($email ?? null);
 
             if($user && password_verify($password ?? null, $user->password)) {
+
+                $_SESSION["user"]=$user;
                 header("Location: /admin", true, 301);
                 exit();
             }

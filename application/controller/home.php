@@ -14,7 +14,7 @@ class Home extends Controller{
     public function index(){
 
         $this->data = [
-            'title' =>"ACCUEIL",
+            'title' => "ACCUEIL",
             'message' =>null
         ] ;
 

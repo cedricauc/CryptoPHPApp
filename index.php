@@ -12,9 +12,11 @@ define("CSS", BASE_URL."assets/css/");
 require CORE . "helpers/debug.php";
 require CORE . "controller.php";
 require CORE . "auth/identifiants.php";
+require CORE . "api.php";
 require CORE . "db.php";
 require CORE . "model.php";
 require CORE . "router.php";
 
+session_start();
 
 Router::run();

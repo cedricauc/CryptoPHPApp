@@ -2,7 +2,7 @@
 
 namespace Core;
 
-use Core\Auth\Auth;
+use Core\Auth;
 use PDO;
 use PDOException;
 

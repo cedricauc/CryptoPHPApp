@@ -2,7 +2,6 @@
 
 namespace App\Model;
 use Core\Model;
-
 use \App;
 use PDO;
 

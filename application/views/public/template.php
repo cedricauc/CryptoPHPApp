@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="/assets/css/Features-Image-images.css" />
     <link rel="stylesheet" href="/assets/css/Navbar-Centered-Brand-icons.css" />
+    <link rel="stylesheet" href="/assets/css/jquery.dataTables.min.css" />
 
 </head>
 
@@ -26,6 +27,8 @@
 
 <?php require $page ?></body>
 
+<script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.dataTables.min.js"></script>
 </body>
 </html>
