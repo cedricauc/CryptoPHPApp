@@ -6,13 +6,16 @@ use \App;
 use App\Model\User;
 use Core\Controller;
 
-class Register extends Controller{
+class Register extends Controller
+{
 
-    function __construct(){
-        require BASE_APP."model/user.php";
+    function __construct()
+    {
+        require BASE_APP . "model/user.php";
     }
 
-    public function index() {
+    public function index()
+    {
         $md = new User();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -28,21 +31,26 @@ class Register extends Controller{
                 $password = $_POST['password'];
             }
 
-            if($md->create($email ?? null, $username ?? null, $password ?? null)) {
-                header("Location: /admin", true, 301);
-                exit();
-            }
-            else{
+            if ($md->findByEmail($email ?? null)) {
+                $message = "Adresse e-mail non disponible ! ";
+            } else if ($md->create($email ?? null, $username ?? null, $password ?? null)) {
+                $user = $md->findByEmail($email ?? null);
+                if ($user && password_verify($password ?? null, $user->password)) {
+                    $_SESSION["user"] = $user;
+                    header("Location: /admin", true, 301);
+                    exit();
+                }
+            } else {
                 $message = "Une erreur s'est produite lors de l'ajout du message ! ";
             }
         }
 
         $this->data = [
-            'title' =>"ACCUEIL",
-            'message' => $message ?? null
-        ] ;
+            'title' => "Créer un compte",
+            'register_message' => $message ?? null
+        ];
 
-        $this->view('public','register',$this->data);
+        $this->view('public', 'register', $this->data);
     }
 
 }

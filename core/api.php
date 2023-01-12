@@ -21,7 +21,7 @@ class Api
         ];
     }
 
-    function query($start, $limit, $convert)
+    function queryAll($start, $limit, $convert)
     {
         $this->parameters = [
             'start' => $start,
@@ -50,7 +50,7 @@ class Api
         return $data;
     }
 
-    function prepare($params)
+    function queryById($params)
     {
         $this->parameters = [
             'id' => implode(',', $params)

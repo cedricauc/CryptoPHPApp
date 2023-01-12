@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Model;
+
 use Core\Model;
 use \App;
 use PDO;
 
-class Bookmark extends Model{
+class Bookmark extends Model
+{
 
     public function findByUserId($user_id): array
     {
@@ -31,13 +33,13 @@ class Bookmark extends Model{
     public function create($crypto_id, $slug, $user_id): bool
     {
         $req = $this->db->prepare("INSERT INTO bookmark(id, crypto_id, slug, user_id) VALUES (uuid(), :crypto_id, :slug, :user_id)");
-        return $req->execute(['crypto_id'=>$crypto_id, 'slug'=>$slug, 'user_id'=>$user_id]);
+        return $req->execute([':crypto_id' => $crypto_id, ':slug' => $slug, ':user_id' => $user_id]);
     }
 
     public function delete($crypto_id): bool
     {
         $req = $this->db->prepare("DELETE FROM bookmark WHERE crypto_id = :crypto_id");
-        return $req->execute(['crypto_id'=>$crypto_id]);
+        return $req->execute([':crypto_id' => $crypto_id]);
     }
 
 }

@@ -1,4 +1,4 @@
-<link href="<?php echo '/assets/bootstrap/css/bootstrap.min.css';?>" rel="stylesheet">
+<link href="<?php echo '/assets/bootstrap/css/bootstrap.min.css'; ?>" rel="stylesheet">
 
 <?php require $header ?></body>
 
@@ -12,8 +12,8 @@
                     <h1 class="text-info">Application de suivi des cryptomonnaies</h1>
                     <div>
                         <p class="text-info my-3 me-5">
-                            Tincidunt laoreet leo, adipiscing taciti tempor. Primis
-                            senectus sapien, risus donec ad fusce augue interdum.
+                            Créer un compte gratuitement et visualisez facilement et rapidement l'évolution des
+                            cryptomonnaies
                         </p>
                     </div>
                     <a
@@ -26,7 +26,7 @@
                     <a
                             class="btn btn-outline-primary btn-lg link-light text-bg-primary border rounded-pill"
                             role="button"
-                            href="#"
+                            href="/#a-propos"
                     >
                         En savoir plus
                     </a>
@@ -63,8 +63,8 @@
                                     />
                                 </div>
                                 <div class="row mb-3">
-                                    <?php if($message) : ?>
-                                        <p class="text-danger"><?= $message ?></p>
+                                    <?php if (isset($login_message)) : ?>
+                                        <p class="text-danger"><?= $login_message ?></p>
                                     <?php endif ?>
                                 </div>
                                 <div class="mb-3">
@@ -85,9 +85,14 @@
             </div>
         </div>
     </div>
-    <div class="svg-border-rounded text-gray-dark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg></div><!----><!----><!---->
+    <div class="svg-border-rounded text-gray-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none"
+             fill="currentColor">
+            <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+        </svg>
+    </div><!----><!----><!---->
 </section>
-<section class="bg-dark py-10">
+<section class="bg-dark py-10" id="a-propos">
     <div class="container py-4 py-xl-5">
         <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
             <div class="col">
@@ -112,8 +117,7 @@
                     </div>
                     <div class="px-3">
                         <p class="text-white">
-                            Erat netus est hendrerit, nullam et quis ad cras porttitor
-                            iaculis. Bibendum vulputate cras aenean.
+                            Votre cryptomonnaie dans un graphique avec son cours et sa variation sur 24h
                         </p>
                     </div>
                 </div>
@@ -140,8 +144,7 @@
                     </div>
                     <div class="px-3">
                         <p class="text-white">
-                            Erat netus est hendrerit, nullam et quis ad cras porttitor
-                            iaculis. Bibendum vulputate cras aenean.
+                            Votre cryptomonnaie dans un graphique représentant le "trading view"
                         </p>
                     </div>
                 </div>
@@ -168,8 +171,7 @@
                     </div>
                     <div class="px-3">
                         <p class="text-white">
-                            Erat netus est hendrerit, nullam et quis ad cras porttitor
-                            iaculis. Bibendum vulputate cras aenean.
+                            Votre cryptomonnaie avec le taux de change estimé
                         </p>
                     </div>
                 </div>
@@ -185,10 +187,12 @@
                         class="text-center text-md-start d-flex flex-column align-items-center align-items-md-start mb-5"
                 >
                     <div>
-                        <h2 class="text-white h1">Personalisé votre application</h2>
+                        <h2 class="text-white h1">Personnalisé votre application</h2>
                         <p class="text-white">
-                            Erat netus est hendrerit, nullam et quis ad cras porttitor
-                            iaculis. Bibendum vulputate cras aenean.
+                            Votre application web et mobile est gratuite et personnalisée. En effet, vous pourrez vous
+                            connecter avec propre profil et ainsi pouvoir mettre en favoris les cryptomonnaies qui vos
+                            intéressent le plus. Cela vous permettra de ne pas être perdu dans un flot de données qui ne
+                            vous intéresse pas.
                         </p>
                     </div>
                 </div>
@@ -256,7 +260,12 @@
             </div>
         </div>
     </div>
-    <div class="svg-border-rounded text-light"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg></div><!----><!----><!---->
+    <div class="svg-border-rounded text-light">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none"
+             fill="currentColor">
+            <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+        </svg>
+    </div><!----><!----><!---->
 </section>
 
 <?php require $footer ?></body>

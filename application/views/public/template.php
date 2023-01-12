@@ -23,12 +23,12 @@
 
 </head>
 
-<body style="font-family: 'Noto Sans', sans-serif;">
+<body style="font-family: 'Noto Sans', sans-serif;" class="wrapper">
 
 <?php require $page ?></body>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery.dataTables.min.js"></script>
 </body>
 </html>

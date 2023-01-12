@@ -6,18 +6,21 @@ use \App;
 use App\Model\User;
 use Core\Controller;
 
-class Login extends Controller{
+class Login extends Controller
+{
 
-    function __construct(){
-        require BASE_APP."model/user.php";
+    function __construct()
+    {
+        require BASE_APP . "model/user.php";
     }
 
-    public function index(){
+    public function index()
+    {
 
         if (isset($_SERVER['HTTP_REFERER'])) {
-            $url = explode('/',$_SERVER['HTTP_REFERER']);
+            $url = explode('/', $_SERVER['HTTP_REFERER']);
             $param = array_pop($url);
-            if(!empty($param)){
+            if (!empty($param)) {
                 $template = $param;
             }
         }
@@ -34,25 +37,23 @@ class Login extends Controller{
             $md = new User();
             $user = $md->findByEmail($email ?? null);
 
-            if($user && password_verify($password ?? null, $user->password)) {
-
-                $_SESSION["user"]=$user;
+            if ($user && password_verify($password ?? null, $user->password)) {
+                $_SESSION["user"] = $user;
                 header("Location: /admin", true, 301);
                 exit();
-            }
-            else {
+            } else {
                 $message = "Identifiants invalides";
             }
         }
 
         $this->data = [
-            'title' =>"ACCUEIL",
-            'message' => $message ?? null
-        ] ;
+            'title' => "ACCUEIL",
+            'login_message' => $message ?? null
+        ];
 
         $template = $template ?? 'home';
 
-        $this->view('public',$template,$this->data);
+        $this->view('public', $template, $this->data);
     }
 
 }
