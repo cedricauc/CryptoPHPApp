@@ -49,7 +49,7 @@
                                     <input
                                             class="border form-control form-control-lg"
                                             type="email"
-                                            name="email"
+                                            name="email1"
                                             placeholder="Email"
                                     />
                                 </div>
@@ -58,7 +58,7 @@
                                     <input
                                             class="border form-control form-control-lg"
                                             type="password"
-                                            name="password"
+                                            name="password1"
                                             placeholder="Password"
                                     />
                                 </div>
@@ -70,14 +70,15 @@
                                 <div class="mb-3">
                                     <button
                                             class="btn btn-primary btn-lg link-light text-bg-primary border rounded-pill d-block w-100"
+                                            id="submitBtn1"
                                             type="submit"
                                     >
                                         Se connecter
                                     </button>
                                 </div>
-                                <a class="text-decoration-none" href="#">
-                                    <p class="text-muted">Mot de passe oublié?</p>
-                                </a>
+<!--                                <a class="text-decoration-none" href="#">-->
+<!--                                    <p class="text-muted">Mot de passe oublié?</p>-->
+<!--                                </a>-->
                             </form>
                         </div>
                     </div>

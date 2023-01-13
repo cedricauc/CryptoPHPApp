@@ -59,10 +59,10 @@ password.addEventListener("change", function () {
     // Lorsque les mots de passe correspondent, nous vérifions la longueur
     else {
         // Vérifiez si le mot de passe comporte 6 caractères ou plus
-        if (password.value.length >= 6)
+        if (password.value.length >= 4)
             hideErrorMsg("password")
         else
-            displayErrorMsg("password", "Le mot de passe doit contenir au moins 6 caractères")
+            displayErrorMsg("password", "Le mot de passe doit contenir au moins 4 caractères")
     }
 })
 
@@ -97,7 +97,7 @@ username.addEventListener("change", function () {
 });
 
 fos.addEventListener("change", function () {
-    if (fos.checked === true)
+    if (this.checked)
         hideErrorMsg("fos")
     else
         displayErrorMsg("fos", "Veuillez accepter les conditions d'utilisation")

@@ -16,10 +16,10 @@
                         <div class="mb-3"></div>
                         <div class="row mb-3">
                             <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text"
-                                                                      placeholder="Email" name="email" required="">
+                                                                      placeholder="Email" name="email1" required="">
                             </div>
                             <div class="col-sm-6"><input class="form-control form-control-user" type="password"
-                                                         placeholder="Password" name="password" required=""></div>
+                                                         placeholder="Password" name="password1" required=""></div>
                         </div>
                         <div class="row mb-3">
                             <?php if (isset($login_message)) : ?>
@@ -29,7 +29,7 @@
                         <div class="row mb-3">
                             <div class="col-sm-6 mb-3 mb-sm-0"></div>
                             <div class="col-sm-6">
-                                <button class="btn btn-primary d-block btn-user w-100" id="submitBtn-1" type="submit">Se
+                                <button class="btn btn-primary d-block btn-user w-100" id="submitBtn1" type="submit">Se
                                     connecter
                                 </button>
                             </div>
@@ -72,7 +72,7 @@
                                                          required=""></div>
                         </div>
                         <div class="mb-3">
-                            <input type="checkbox" checked="checked" id="fos">
+                            <input type="checkbox" id="fos" value="2">
                             <span class="checkmark"></span>
                             <label class="check">J'accepte les conditions d'utilisation</label>
                         </div>
