@@ -9,4 +9,5 @@ class Model {
     function __construct(){
         $this->db = DB::init();
     }
+
 }

@@ -16,7 +16,7 @@ class DB{
                     self::$instance = new PDO(Auth::DSN, Auth::USER, Auth::PWD);
                     self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 }catch(PDOException $e){
-                    exit("<h3>Error Server connexion</h3>");
+                    exit("<h3>Erreur de connexion au serveur</h3>");
                 }
         }
         return self::$instance;

@@ -7,6 +7,7 @@ let usernameErrorMsg = document.getElementById('usernameErrorMsg')
 let profileAction = document.getElementById("profile-action")
 let profileEdit = document.getElementById("profile-edit")
 let profileShow = document.getElementById("profile-show")
+let errorMsg = document.getElementById("errorMsg")
 
 profileAction.addEventListener('click', function (e) {
     if (profileEdit.classList.contains('d-block')) {

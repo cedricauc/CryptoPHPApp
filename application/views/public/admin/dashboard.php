@@ -5,7 +5,7 @@
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
         <div class="container-fluid d-flex flex-column p-0"><a
                     class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                <div class="sidebar-brand-icon rotate-n-15"><span><img src="assets/img/logo.png"
+                <div class="sidebar-brand-icon rotate-n-15"><span><img src="/assets/img/logo.png"
                                                                        style="width: 50px; height: 50px;"/></span></div>
                 <div class="sidebar-brand-text mx-3"><span>cryptoevol</span></div>
             </a>
@@ -67,13 +67,6 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <!--                                    <li class="list-group-item">-->
-                                    <!--                                        <div class="row align-items-center no-gutters">-->
-                                    <!--                                            <div class="col me-2">-->
-                                    <!--                                                <h6 class="mb-0"><strong>date de naissance: 01/01/2000</strong></h6>-->
-                                    <!--                                            </div>-->
-                                    <!--                                        </div>-->
-                                    <!--                                    </li>-->
                                     <li class="list-group-item">
                                         <div class="row align-items-center no-gutters">
                                             <div class="col me-2">
@@ -103,7 +96,7 @@
                                     </div>
                                     <div class="row mb-3">
                                         <?php if ($message) : ?>
-                                            <p class="text-info"><?= $message ?></p>
+                                            <p id="errorMsg" class="text-info"><?= $message ?></p>
                                         <?php endif ?>
                                         <p id="usernameErrorMsg" class="text-danger" style="display:none;">Paragraph</p>
                                         <p id="passwordErrorMsg" class="text-danger" style="display:none;">Paragraph</p>

@@ -2,15 +2,12 @@
     padding-top: 6rem !important;
     padding-bottom: 6rem !important;
 }
-
 .pt-10 {
     padding-top: 6rem !important;
 }
-
 .pb-10 {
     padding-bottom: 6rem !important;
 }
-
 .svg-border-rounded svg {
     height: 3rem;
 }
@@ -21,12 +18,13 @@
 .text-gray-dark{
     color: #333 !important;
 }
-.wrapper {
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr 1fr 1fr;
+@media (min-width: 992px) {
+    .wrapper {
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr 1fr 1fr;
+    }
 }
-
 .chart-area {
     height: 100% !important;
 }
