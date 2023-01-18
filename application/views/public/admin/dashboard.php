@@ -1,6 +1,5 @@
 <link href="<?php echo '/assets/bootstrap/css/admin.min.css'; ?>" rel="stylesheet">
 
-<body id="page-top">
 <div id="wrapper">
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
         <div class="container-fluid d-flex flex-column p-0"><a
@@ -86,7 +85,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password"
+                                        <input type="password" class="form-control" name="password" id="password"
                                                placeholder="Password">
                                     </div>
                                     <div class="form-group">
@@ -94,7 +93,7 @@
                                         <input type="text" class="form-control" name="verify" id="verifyPassword"
                                                placeholder="Confirm password">
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-2 mt-3">
                                         <?php if ($message) : ?>
                                             <p id="errorMsg" class="text-info"><?= $message ?></p>
                                         <?php endif ?>
@@ -199,11 +198,43 @@
                     <div class="text-center my-auto copyright"><span>Cryptoevol © 2023</span></div>
                 </div>
             </footer>
+
+
         </div>
         <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
-    <script src="/assets/js/edit.js"></script>
-    <script src="/assets/js/admin.js"></script>
-    <script src="/assets/js/chart.min.js"></script>
-    <script src="/assets/js/bs-init.js"></script>
-    <script src="/assets/js/theme.js"></script>
+    <?php if (isset($modal_message)) : ?>
+        <div class="modal show" tabindex="-1" role="dialog" style="display: block;" aria-modal="true" id="modal">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary">
+                        <h5 class="modal-title text-light">Notification</h5>
+                        <button type="button" class="btn close text-light" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body bg-primary">
+                        <p class="text-light"><?= $modal_message ?></p>
+                    </div>
+                    <div class="modal-footer bg-primary">
+                        <button type="button" class="btn btn-light close" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif ?>
+</div>
+
+<script>
+    document.querySelectorAll('.close').forEach(function (button) {
+        button.addEventListener("click", function () {
+            $('#modal').hide();
+        });
+    });
+</script>
+
+<script src="/assets/js/edit.js"></script>
+<script src="/assets/js/admin.js"></script>
+<script src="/assets/js/chart.min.js"></script>
+<script src="/assets/js/bs-init.js"></script>
+<script src="/assets/js/theme.js"></script>

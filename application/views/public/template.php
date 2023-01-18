@@ -23,7 +23,7 @@
 
 </head>
 
-<body style="font-family: 'Noto Sans', sans-serif;" class="wrapper">
+<body style="font-family: 'Noto Sans', sans-serif;" id="page-top">
 
 <?php require $page ?></body>
 

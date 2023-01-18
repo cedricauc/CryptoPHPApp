@@ -18,13 +18,6 @@
 .text-gray-dark{
     color: #333 !important;
 }
-@media (min-width: 992px) {
-    .wrapper {
-        min-height: 100%;
-        display: grid;
-        grid-template-rows: auto 1fr 1fr 1fr;
-    }
-}
 .chart-area {
     height: 100% !important;
 }

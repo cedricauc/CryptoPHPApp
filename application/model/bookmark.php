@@ -16,17 +16,17 @@ class Bookmark extends Model
         return $req->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function findByCryptoId($id)
+    public function findByCryptoId($id, $user_id)
     {
-        $req = $this->db->prepare("SELECT * FROM bookmark WHERE crypto_id = :id");
-        $req->execute([":id" => $id]);
+        $req = $this->db->prepare("SELECT * FROM bookmark WHERE crypto_id = :id and user_id = :user_id");
+        $req->execute([":id" => $id, ":user_id" => $user_id]);
         return $req->fetch(PDO::FETCH_OBJ);
     }
 
-    public function findBySlug($slug)
+    public function findBySlug($slug, $user_id)
     {
-        $req = $this->db->prepare("SELECT * FROM bookmark WHERE slug = :slug");
-        $req->execute([":slug" => $slug]);
+        $req = $this->db->prepare("SELECT * FROM bookmark WHERE slug = :slug and user_id = :user_id");
+        $req->execute([":slug" => $slug, ":user_id" => $user_id]);
         return $req->fetch(PDO::FETCH_OBJ);
     }
 

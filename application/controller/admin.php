@@ -32,24 +32,7 @@ class Admin extends Controller
             exit();
         }
 
-        $md = new Bookmark();
-        $bookmarks = $md->findByUserId($this->user->id);
-        $bookmarksId = [];
-        foreach ($bookmarks as $bookmark) {
-            $bookmarksId[] = $bookmark->crypto_id;
-        }
-
-        $req = $this->api->queryAll('1', '1000', $this->currency);
-
-        $this->data = [
-            'title' => "ADMIN",
-            'user' => $this->user,
-            'data' => $req,
-            'bookmarks_id' => $bookmarksId,
-            'message' => null
-        ];
-
-        $this->view('public/admin', 'dashboard', $this->data);
+        $this->render($message ?? null, $modal_message ?? null);
     }
 
     public function add($id, $slug)
@@ -61,11 +44,13 @@ class Admin extends Controller
 
         $md = new Bookmark();
 
-        if (!$md->findByCryptoId($id) && $md->create($id ?? null, $slug ?? null, $this->user->id ?? null)) {
-            $message = "Crypto: " . $id . " ajoutée à la liste des favoris";
+        if (!$md->findByCryptoId($id, $this->user->id) && $md->create($id ?? null, $slug ?? null, $this->user->id ?? null)) {
+            $modal_message = "La cryptomonnaie " . $slug . " a été ajoutée à la liste des favoris";
+        } else {
+            $modal_message = "Une erreur s'est produite";
         }
-        header("Location: /admin", true, 301);
-        exit();
+
+        $this->render($message ?? null, $modal_message ?? null);
     }
 
     public function remove($id)
@@ -78,10 +63,12 @@ class Admin extends Controller
         $md = new Bookmark();
 
         if ($md->findByCryptoId($id) && $md->delete($id ?? null)) {
-            $message = "Crypto: " . $id . " supprimé de la liste des favoris";
+            $modal_message = "La cryptomonnaie " . $id . " a été supprimé de la liste des favoris";
+        } else {
+            $modal_message = "Une erreur s'est produite";
         }
-        header("Location: /admin", true, 301);
-        exit();
+
+        $this->render($message ?? null, $modal_message ?? null);
     }
 
     public function bookmarks()
@@ -120,14 +107,24 @@ class Admin extends Controller
             if (isset($_POST['password'])) {
                 $password = $_POST['password'];
             }
-            $md = new User();
-            if ($md->edit($this->user->id, $username ?? null, $password ?? null)) {
-                $message = "Votre profil a correctement été modifié !";
+
+            if (!empty($username) && !empty($password)) {
+                $md = new User();
+                if ($md->edit($this->user->id, $username ?? null, $password ?? null)) {
+                    $message = "Votre profil a correctement été modifié !";
+                } else {
+                    $message = "Une erreur s'est produite !";
+                }
             } else {
-                $message = "Une erreur s'est produite !";
+                $message = "Vous n'avez pas saisi un nom utilisateur et mot de passe!";
             }
         }
 
+        $this->render($message ?? null, $modal_message ?? null);
+    }
+
+    public function render($message = null, $modal_message = null)
+    {
         $md = new Bookmark();
         $bookmarks = $md->findByUserId($this->user->id);
         $bookmarksId = [];
@@ -142,7 +139,8 @@ class Admin extends Controller
             'user' => $this->user,
             'data' => $req,
             'bookmarks_id' => $bookmarksId,
-            'message' => $message ?? null
+            'message' => $message,
+            'modal_message' => $modal_message
         ];
 
         $this->view('public/admin', 'dashboard', $this->data);

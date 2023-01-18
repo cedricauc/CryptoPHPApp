@@ -16,11 +16,15 @@ class Login extends Controller
 
     public function index()
     {
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            header("Location: /", true, 301);
+            exit();
+        }
 
         if (isset($_SERVER['HTTP_REFERER'])) {
             $url = explode('/', $_SERVER['HTTP_REFERER']);
             $param = array_pop($url);
-            if (!empty($param)) {
+            if (!empty($param) && $param != 'login') {
                 $template = $param;
             }
         }
@@ -52,6 +56,7 @@ class Login extends Controller
         ];
 
         $template = $template ?? 'home';
+
 
         $this->view('public', $template, $this->data);
     }
