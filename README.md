@@ -8,6 +8,7 @@ Pour l'application web :
 - [PHP](https://www.php.net/) : back-end
 - [MySQL](https://www.mysql.com/) : RDBMS
 - [composer](https://getcomposer.org/) : Dependency Manager
+- [Docker](https://www.docker.com) : deployment
 
 ## Installation 
 
@@ -30,3 +31,15 @@ Saisir la commande pour lancer les tests de l'application
 php vendor/bin/phpunit --configuration tests/phpunit.xml tests/
 ```
 
+## Déploiement
+
+Saisir la commande pour déployer l'application dans un container docker
+```
+docker-compose up --build
+```
+
+Lancement de l'application en local.\
+Ouvrir [http://127.0.0.1:8000](http://127.0.0.1:8000) pour afficher dans le navigateur
+
+Lancement de la console phpmyadmin en local.\
+Ouvir [http://127.0.0.1:8084](http://127.0.0.1:8084) pour afficher dans le navigateur
