@@ -1,3 +1,7 @@
+.vscode
 .idea
 auth.json
 vendor
+www/vendor
+mysql
+db

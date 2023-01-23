@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  php-apache-environment:
+    container_name: php-apache
+    build: ./
+    depends_on:
+      - mysql
+    volumes:
+      - ./www:/var/www/html/
+    ports:
+      - 8000:80
+  mysql:
+    container_name: mysql
+    image: mysql:8
+    restart: always
+    tty: true
+    environment:
+      MYSQL_DATABASE: studi_cryptoevol
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql/
+      - ./dump:/docker-entrypoint-initdb.d
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: root
+      UPLOAD_LIMIT: 20M
+    ports:
+      - '8084:80'
+    depends_on:
+      - mysql
+

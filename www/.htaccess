@@ -1,0 +1,9 @@
+# Custom directives start here
+Options -Indexes
+# Rewrite for routing of all requests through REST controller
+RewriteEngine On
+# If a directory or a file exists, use the request directly
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+# Otherwise forward the request to index.php
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]

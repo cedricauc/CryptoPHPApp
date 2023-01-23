@@ -34,14 +34,6 @@ CREATE TABLE `bookmark` (
   `user_id` varchar(36) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `bookmark`
---
-
-INSERT INTO `bookmark` (`id`, `crypto_id`, `slug`, `user_id`) VALUES
-('3987b01d-928d-11ed-8660-00155d000100', 1, 'bitcoin', '2b8995f6-928d-11ed-8660-00155d000100'),
-('4b972ffe-928d-11ed-8660-00155d000100', 1027, 'ethereum', '2b8995f6-928d-11ed-8660-00155d000100');
-
 -- --------------------------------------------------------
 
 --
@@ -54,14 +46,6 @@ CREATE TABLE `user` (
   `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `password` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `email`, `username`, `password`) VALUES
-('2b8995f6-928d-11ed-8660-00155d000100', 'test@test.test', 'test', '$2y$10$IkmZeeWyrNTbYzTgqigHx.YvEAHOEeqC2SO5a7xkJjrCo47k2wC0q'),
-('4eed3bd6-928f-11ed-8660-00155d000100', 'admin@admin.admin', 'admin', '$2y$10$DjspgJCxKa.WbHr4wB1q3OpFZscb/7v/Qk0tASltLA50C8Qn1rKma');
 
 --
 -- Indexes for dumped tables
